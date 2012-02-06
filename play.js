@@ -8,6 +8,14 @@ var instrumentals = {
     acai : {
         talk : [ 'http://www.youtube.com/watch?v=gRmd3OXs-qE', 100 ],
         music : [ 'http://www.youtube.com/watch?v=DripIUEVjjA', 50 ]
+    },
+    'manila slum' : {
+        talk : [ 'http://www.youtube.com/watch?v=eYFzGkBqJ2c', 100 ],
+        music : [ 'http://www.youtube.com/watch?v=pt9Ov4gYtew', 40 ]
+    },
+    'pop out' : {
+        talk : [ 'http://www.youtube.com/watch?v=BnZks0BCCiw', 100 ],
+        music : [ 'http://www.youtube.com/watch?v=_83pa-KJGTc', 50 ]
     }
 };
 
@@ -21,19 +29,24 @@ function talkOnstateChange (state) {
 }
 
 $(document).ready(function () {
-    $('#playlist a').each(function () {
-        var name = $(this).text();
-        $(this).click(function () {
-            var params = instrumentals[name];
-            $('#talk-uri').val(params.talk[0]);
-            $('#talk-volume').val(params.talk[1]);
-            $('#music-uri').val(params.music[0]);
-            $('#music-volume').val(params.music[1]);
-            
-            reload();
-            if ($('#play').val() === 'play') $('#play').trigger('click');
-        });
-    });
+    for (var key in instrumentals) (function (key) {
+        var params = instrumentals[key];
+        var div = $('<div>').appendTo($('#playlist'));
+        $('<a>')
+            .attr('href', '#')
+            .text(key)
+            .appendTo(div)
+            .click(function () {
+                $('#talk-uri').val(params.talk[0]);
+                $('#talk-volume').val(params.talk[1]);
+                $('#music-uri').val(params.music[0]);
+                $('#music-volume').val(params.music[1]);
+                
+                reload();
+                if ($('#play').val() === 'play') $('#play').trigger('click');
+            })
+        ;
+    })(key);
     
     $('#play').click(function () {
         reload();
