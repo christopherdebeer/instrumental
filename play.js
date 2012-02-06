@@ -66,7 +66,7 @@ $(document).ready(function () {
     });
     
     var query = (window.location.search || '').replace(/^\?/, '');
-    if (instrumentals[query]) {
+    if (instrumentals[unescape(query)]) {
         var params = instrumentals[query]
         $('#talk-uri').val(params.talk[0]);
         $('#talk-volume').val(params.talk[1]);
