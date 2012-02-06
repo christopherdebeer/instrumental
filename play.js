@@ -23,6 +23,14 @@ var instrumentals = {
     }
 };
 
+var queue = [];
+var ready = false;
+function onYouTubePlayerReady () {
+    ready = true;
+    for (var i = 0; i < queue.length; i++) queue[i]();
+    queue = [];
+}
+
 function talkOnstateChange (state) {
     if (state === 0) { // ended
         setInterval(function () {
@@ -33,23 +41,14 @@ function talkOnstateChange (state) {
 }
 
 $(document).ready(function () {
-    for (var key in instrumentals) (function (key) {
-        var params = instrumentals[key];
+    for (var key in instrumentals) {
         var div = $('<div>').appendTo($('#playlist'));
         $('<a>')
-            .attr('href', '#')
+            .attr('href', '?' + escape(key))
             .text(key)
             .appendTo(div)
-            .click(function () {
-                $('#talk-uri').val(params.talk[0]);
-                $('#talk-volume').val(params.talk[1]);
-                $('#music-uri').val(params.music[0]);
-                $('#music-volume').val(params.music[1]);
-                
-                reload();
-            })
         ;
-    })(key);
+    }
     
     $('#play').click(function () {
         reload();
@@ -66,9 +65,21 @@ $(document).ready(function () {
         });
     });
     
+    var query = (window.location.search || '').replace(/^\?/, '');
+    if (instrumentals[query]) {
+        var params = instrumentals[query]
+        $('#talk-uri').val(params.talk[0]);
+        $('#talk-volume').val(params.talk[1]);
+        $('#music-uri').val(params.music[0]);
+        $('#music-volume').val(params.music[1]);
+        $('#play').trigger('click');
+    }
+    
     $('#reload').click(reload);
     
     function reload () {
+        if (!ready) return queue.push(reload);
+        
         talk = $('#talk-api');
         var talkUri = $('#talk-uri').val();
         var talkId = talkUri.match(/\bv=([^&]+)/)[1];
