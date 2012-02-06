@@ -1,0 +1,80 @@
+<html>
+  <head>
+    <title>instrumental</title>
+    <script src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('swfobject', '2.1');
+      google.load('jquery', '1.7.1');
+    </script>
+    <script src="play.js"></script>
+    <script type="text/javascript">
+      swfobject.embedSWF(
+        'http://www.youtube.com/apiplayer?enablejsapi=1&version=3',
+        'talk', '425', '356', '8', null, null,
+        { allowScriptAccess: "always" },
+        { id : 'talk-api' }
+      );
+      swfobject.embedSWF(
+        'http://www.youtube.com/apiplayer?enablejsapi=1&version=3',
+        'music', '1', '1', '8', null, null,
+        { allowScriptAccess: "always" },
+        { id : 'music-api' }
+      );
+    </script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>instrumental</h1>
+    <div id="container">
+      <div id="playlist">
+        <h3>playlist</h3>
+        <div><a href="#">lessig</a></div>
+        <div><a href="#">acai</a></div>
+      </div>
+      
+      <div id="player">
+        <table>
+          <tr>
+            <th></th>
+            <td></td>
+            <th>volume</th>
+          </tr>
+          <tr>
+            <th>talk</th>
+            <td>
+              <input type="text" id="talk-uri"
+                value="http://www.youtube.com/watch?v=2YRCPTFjB3Q"
+                class="uri"
+              >
+            </td>
+            <td>
+              <input type="text" id="talk-volume" class="volume"
+                value="100">
+            </td>
+          </tr>
+          <tr>
+            <th>music</th>
+            <td>
+              <input type="text" id="music-uri"
+                value="http://www.youtube.com/watch?v=6Hh3tciRim0"
+                class="uri"
+              >
+            </td>
+            <td>
+              <input type="text" id="music-volume" class="volume"
+                value="30">
+            </td>
+          </tr>
+        </table>
+        
+        <div id="buttons">
+          <input type="button" id="play" value="play">
+          <input type="button" id="reload" value="reload">
+        </div>
+        
+        <div id="talk"></div>
+        <div id="music"></div>
+      </div>
+    </div>
+  </body>
+</html>
