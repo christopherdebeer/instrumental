@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h1>instrumental</h1>
+    <h1><a href="?">instrumental</a></h1>
     <div id="container">
       <div id="playlist">
         <h3>playlist</h3>
@@ -36,6 +36,7 @@
             <th></th>
             <td></td>
             <th>volume</th>
+            <th>offset</th>
           </tr>
           <tr>
             <th>talk</th>
@@ -49,6 +50,10 @@
               <input type="text" id="talk-volume" class="volume"
                 value="100">
             </td>
+            <td>
+              <input type="text" id="talk-offset" class="offset"
+                value="0">
+            </td>
           </tr>
           <tr>
             <th>music</th>
@@ -61,6 +66,10 @@
             <td>
               <input type="text" id="music-volume" class="volume"
                 value="30">
+            </td>
+            <td>
+              <input type="text" id="music-offset" class="offset"
+                value="0">
             </td>
           </tr>
         </table>
