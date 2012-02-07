@@ -24,11 +24,25 @@ var instrumentals = {
 };
 
 var queue = [];
-var ready = false;
+var ready = {};
+
 function onYouTubePlayerReady () {
-    ready = true;
+    ready.player = true;
     for (var i = 0; i < queue.length; i++) queue[i]();
     queue = [];
+}
+
+function musicOnstateChange (state) {
+    if (state === 0 && talk[0].getPlayerState() === 1) {
+        music[0].seekTo(0);
+    }
+    else if (state === 5) {
+        ready.music = true;
+        if (ready.talk) {
+            talk[0].playVideo();
+            music[0].playVideo();
+        }
+    }
 }
 
 function talkOnstateChange (state) {
@@ -39,10 +53,11 @@ function talkOnstateChange (state) {
         }, 10);
     }
     else if (state === 5) {
-        talk[0].playVideo();
-        setTimeout(function () {
+        ready.talk = true;
+        if (ready.music) {
+            talk[0].playVideo();
             music[0].playVideo();
-        }, 1);
+        }
     }
 }
 
@@ -103,21 +118,23 @@ $(document).ready(function () {
     $('#reload').click(reload);
     
     function reload () {
-        if (!ready) return queue.push(reload);
+        if (!ready.player) return queue.push(reload);
+        ready = { player : true };
         
         talk = $('#talk-api');
         var talkUri = $('#talk-uri').val();
         var talkId = talkUri.match(/\bv=([^&]+)/)[1];
-        talk[0].cueVideoById(talkId, parseInt($('#talk-offset').val(), 10));
         
         talk[0].setVolume(parseInt($('#talk-volume').val(), 10));
         talk[0].addEventListener('onStateChange', 'talkOnstateChange');
+        talk[0].cueVideoById(talkId, parseInt($('#talk-offset').val(), 10));
         
         music = $('#music-api');
         var musicUri = $('#music-uri').val();
         var musicId = musicUri.match(/\bv=([^&]+)/)[1];
-        music[0].setLoop(true);
+        
         music[0].setVolume(parseInt($('#music-volume').val(), 10));
+        music[0].addEventListener('onStateChange', 'musicOnstateChange');
         music[0].cueVideoById(musicId, parseInt($('#music-offset').val(), 10));
     }
 });
