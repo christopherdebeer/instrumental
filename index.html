@@ -23,15 +23,12 @@
     </script>
     <link rel="stylesheet" href="style.css">
   </head>
-  <body>
-    <h1><a href="?">instrumental</a></h1>
-    <div id="container">
-      <div id="playlist">
-        <h3>playlist</h3>
-      </div>
-      
-      <div id="player">
-        <table>
+  <body id="player">
+    <div id="header">
+     <div class="inner">
+        <h1><a href="?">instrumental</a></h1>
+        <div id="controls">
+          <table>
           <tr>
             <th></th>
             <td></td>
@@ -79,15 +76,25 @@
           <input type="button" id="reload" value="reload">
           <a id="link" href="#">permalink</a>
         </div>
-        
+        </div>
+     </div>
+    </div>
+    <div id="container">
+      <div class="inner">
+        <div id="playlist">
+        <h3>playlist</h3>
+      </div>
+      
+      <div id="screen">
         <div id="talk"></div>
         <div id="music"></div>
       </div>
+      </div>
     </div>
     
-    <div id="source">
-      <a href="https://github.com/substack/instrumental"
-        >check out the code on github</a>
+    <div id="footer">
+      <div class="inner"><a href="https://github.com/substack/instrumental"
+        >check out the code on github</a></div>
     </div>
   </body>
 </html>

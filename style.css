@@ -1,27 +1,43 @@
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
 h1 {
     text-align: center;
 }
-
+#header {
+    
+}
+#header #controls {
+    margin-bottom: -50px;
+}
 #container {
+    background-color: #000;
+}
+#header .inner, #footer .inner, #container .inner {
     width: 650px;
     margin: auto;
+    padding: 20px;
 }
-
+#footer {
+   
+}
 #playlist {
     float: right;
     width: 150px;
     text-align: left;
 }
-
 #player table input.uri {
     width: 320px;
 }
 
-#player table input.volume {
+#controls table input.volume {
     width: 50px;
 }
 
-#player table input.offset {
+#controls table input.offset {
     width: 50px;
 }
 
