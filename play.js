@@ -121,6 +121,15 @@ $(document).ready(function () {
         if (!ready.player) return queue.push(reload);
         ready = { player : true };
         
+        $('#link').attr('href', '?' + [
+            'talkUri=' + escape($('#talk-uri').val()),
+            'talkVolume=' + escape($('#talk-volume').val()),
+            'talkOffset=' + escape($('#talk-offset').val()),
+            'musicUri=' + escape($('#music-uri').val()),
+            'musicVolume=' + escape($('#music-volume').val()),
+            'musicOffset=' + escape($('#music-offset').val())
+        ].join('&'));
+        
         talk = $('#talk-api');
         var talkUri = $('#talk-uri').val();
         var talkId = talkUri.match(/\bv=([^&]+)/)[1];
