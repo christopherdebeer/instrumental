@@ -18,7 +18,7 @@ var instrumentals = {
         music : [ 'http://www.youtube.com/watch?v=_83pa-KJGTc', 50, 0 ]
     },
     'ryan dahl' : {
-        talk : [ 'http://www.youtube.com/watch?v=L_JKb61EalQ', 100, 8 ],
+        talk : [ 'http://www.youtube.com/watch?v=L_JKb61EalQ', 50, 8 ],
         music : [ 'http://www.youtube.com/watch?v=sNChulAdILY', 50, 0 ]
     }
 };
