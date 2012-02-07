@@ -17,6 +17,10 @@ var instrumentals = {
         talk : [ 'http://www.youtube.com/watch?v=BnZks0BCCiw', 100, 0 ],
         music : [ 'http://www.youtube.com/watch?v=_83pa-KJGTc', 50, 0 ]
     },
+    vancouver : {
+        talk : [ 'http://www.youtube.com/watch?v=4VzOUKODdZ4', 30, 7 ],
+        music : [ 'http://www.youtube.com/watch?v=ZnHmskwqCCQ', 100, 4 ]
+    },
     'ryan dahl' : {
         talk : [ 'http://www.youtube.com/watch?v=L_JKb61EalQ', 50, 8 ],
         music : [ 'http://www.youtube.com/watch?v=sNChulAdILY', 50, 0 ]
