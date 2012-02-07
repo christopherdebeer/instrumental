@@ -1,12 +1,13 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <title>instrumental</title>
+    <title>Instrumental</title>
     <script src="http://www.google.com/jsapi"></script>
     <script type="text/javascript">
       google.load('swfobject', '2.1');
       google.load('jquery', '1.7.1');
     </script>
-    <script src="play.js"></script>
+    <script src="assets/js/play.js"></script>
     <script type="text/javascript">
       swfobject.embedSWF(
         'http://www.youtube.com/apiplayer?enablejsapi=1&version=3',
@@ -21,80 +22,84 @@
         { id : 'music-api' }
       );
     </script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body id="player">
     <div id="header">
      <div class="inner">
-        <h1><a href="?">instrumental</a></h1>
+        <h1 id="logo"><a href="?">instrumental</a></h1>
         <div id="controls">
           <table>
-          <tr>
-            <th></th>
-            <td></td>
-            <th>volume</th>
-            <th>offset</th>
-          </tr>
-          <tr>
-            <th>talk</th>
-            <td>
-              <input type="text" id="talk-uri"
-                value="http://www.youtube.com/watch?v=2YRCPTFjB3Q"
-                class="uri"
-              >
-            </td>
-            <td>
-              <input type="text" id="talk-volume" class="volume"
-                value="100">
-            </td>
-            <td>
-              <input type="text" id="talk-offset" class="offset"
-                value="0">
-            </td>
-          </tr>
-          <tr>
-            <th>music</th>
-            <td>
-              <input type="text" id="music-uri"
-                value="http://www.youtube.com/watch?v=6Hh3tciRim0"
-                class="uri"
-              >
-            </td>
-            <td>
-              <input type="text" id="music-volume" class="volume"
-                value="30">
-            </td>
-            <td>
-              <input type="text" id="music-offset" class="offset"
-                value="0">
-            </td>
-          </tr>
-        </table>
+            <tr>
+              <th></th>
+              <td></td>
+              <th class="icon-volume"><a href="#" title="Volume">Volume</a></th>
+              <th class="icon-offset"><a href="#" title="Offset">Offset</a></th>
+            </tr>
+            <tr>
+              <th class="icon-video"><a href="#" title="Video">Video</a></th>
+              <td>
+                <input type="text" id="talk-uri"
+                  value="http://www.youtube.com/watch?v=2YRCPTFjB3Q"
+                  class="uri"
+                >
+              </td>
+              <td>
+                <input type="text" id="talk-volume" class="volume"
+                  value="100">
+              </td>
+              <td>
+                <input type="text" id="talk-offset" class="offset"
+                  value="0">
+              </td>
+            </tr>
+            <tr>
+              <th class="icon-music"><a href="#" title="Music">Music</a></th>
+              <td>
+                <input type="text" id="music-uri"
+                  value="http://www.youtube.com/watch?v=6Hh3tciRim0"
+                  class="uri"
+                >
+              </td>
+              <td>
+                <input type="text" id="music-volume" class="volume"
+                  value="30">
+              </td>
+              <td>
+                <input type="text" id="music-offset" class="offset"
+                  value="0">
+              </td>
+            </tr>
+          </table>
         
-        <div id="buttons">
-          <input type="button" id="play" value="play">
-          <input type="button" id="reload" value="reload">
-          <a id="link" href="#">permalink</a>
-        </div>
-        </div>
+          <div id="buttons">
+            <a href="#" id="settings" title="Show/Hide Settings">Settings</a>
+            <input class="btn" type="button" id="play" value="play">
+            <input class="btn" type="button" id="reload" value="reload">
+            <a id="link" href="#" title="Permalink">Permalink</a>
+          </div>
+
+          </div>
      </div>
     </div>
     <div id="container">
-      <div class="inner">
-        <div id="playlist">
-        <h3>playlist</h3>
-      </div>
-      
-      <div id="screen">
-        <div id="talk"></div>
-        <div id="music"></div>
-      </div>
+      <div class="inner">      
+        <div id="screen">
+          <div id="talk"></div>
+          <div id="music"></div>
+        </div>
       </div>
     </div>
     
     <div id="footer">
-      <div class="inner"><a href="https://github.com/substack/instrumental"
-        >check out the code on github</a></div>
+      <div class="inner">
+        <div id="playlist">
+          <h3 class="title">playlist</h3>
+        </div>
+        <p>Check out the code on <a href="https://github.com/substack/instrumental">GitHub</a></p>
+        <p>Origin idea and source: Jame Halliday (substack)</p>
+        <p>UI &amp; Design: Christopher de beer (christopherdb)</p>
+      </div>
     </div>
   </body>
 </html>

@@ -1,0 +1,175 @@
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+    background: url("assets/img/broken_noise.png") repeat scroll left top transparent;
+}
+
+a {
+    color: #e59e04;
+    text-decoration: none;
+}
+h1#logo {
+    margin: 10px auto 35px;
+    width: 435px;
+    height: 62px;
+    text-indent: -999px;
+    background: url("assets/img/logo.png") top left no-repeat transparent;
+}
+#header {
+    position: relative;
+    background-color: #fff;
+    z-index: 9999;
+    background: url("assets/img/white_leather.png") repeat scroll 0 0 transparent;
+}
+#controls {
+    margin-bottom: -170px;
+    padding: 30px 10px 0;
+    position: relative;
+    height: 145px;
+}
+#controls table {
+    margin: 0 auto;
+}
+#controls th {
+    color:#666;
+    text-transform: uppercase;
+    font-family: monospace;
+}
+#controls .icon-video a, #controls .icon-music a, #controls .icon-volume a, #controls .icon-offset a {
+    background-position: 0 4px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 22px;
+    text-indent: -9999em;
+    width: 17px;
+}
+#controls .icon-video a {
+    background-image: url(assets/img/icons/icon-music.gif);
+}
+#controls .icon-music a {
+    background-image: url(assets/img/icons/icon-video.gif);
+}
+#controls .icon-volume a {
+    width: 35px;
+    height: 10px;
+    background-image: url(assets/img/icons/icon-volume.gif);
+    background-position: center center;
+}
+
+#controls .icon-offset a {
+    width: 30px;
+    height: 10px;
+    background-image: url(assets/img/icons/icon-offset.gif);
+    background-position: center center;
+}
+#container {
+    margin-top: 130px;
+    background-color: #000;
+    /*padding-top: 130px;*/
+}
+
+#container.min {
+    margin-top: 65px;
+}
+
+#header .inner, #footer .inner, #container .inner {
+    width: 650px;
+    margin: auto;
+    padding: 20px;
+}
+#footer {
+
+   padding-bottom: 100px;
+   color: #CCCCCC;
+}
+#playlist {
+    z-index: 9999;
+    background-color: #CCCCCC;
+    padding: 15px;
+    text-align: left;
+}
+
+#playlist .title {
+    margin: -5px 0 10px;
+}
+#player table input.uri {
+    width: 400px;
+}
+
+#controls table input.volume {
+    width: 50px;
+}
+
+#controls table input.offset {
+    width: 50px;
+}
+
+#buttons {
+    margin: 12px auto;
+    text-align: center;
+    width: 500px;
+}
+
+#buttons input {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 100px;
+}
+
+#link, #settings {
+    height: 20px;
+    width: 20px;
+    text-indent: -9999em;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: 0 0;    
+}
+#link {background-image: url("assets/img/icons/icon-lrg-link.gif");}
+#settings {background-image: url("assets/img/icons/icon-lrg-settings.gif");}
+
+
+
+#container #screen {
+    display: block;
+    margin: 0 auto;
+    overflow: auto;
+    position: relative;
+    width: 450px;
+}
+
+
+
+#source {
+    text-align: center;
+}
+
+
+
+
+.btn { 
+
+-moz-border-bottom-colors: none;
+-moz-border-image: none;
+-moz-border-left-colors: none;
+-moz-border-right-colors: none;
+-moz-border-top-colors: none;
+-moz-transition: all 0.1s linear 0s;
+background-color: #E6E6E6;
+background-repeat: no-repeat;
+border-color: #CCCCCC #CCCCCC #BBBBBB;
+border-radius: 4px 4px 4px 4px;
+border-style: solid;
+border-width: 1px;
+box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+color: #333333;
+cursor: pointer;
+display: inline-block;
+font-size: 13px;
+line-height: normal;
+padding: 5px 14px 6px;
+text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+
+background-color: hsl(36, 100%, 40%); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="hsl(36, 100%, 60%)", endColorstr="hsl(36, 100%, 40%)"); background-repeat: repeat-x; background-image: -khtml-gradient(linear, left top, left bottom, from(hsl(36, 100%, 60%)), to(hsl(36, 100%, 40%))); background-image: -moz-linear-gradient(top, hsl(36, 100%, 60%), hsl(36, 100%, 40%)); background-image: -ms-linear-gradient(top, hsl(36, 100%, 60%), hsl(36, 100%, 40%)); background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, hsl(36, 100%, 60%)), color-stop(100%, hsl(36, 100%, 40%))); background-image: -webkit-linear-gradient(top, hsl(36, 100%, 60%), hsl(36, 100%, 40%)); background-image: -o-linear-gradient(top, hsl(36, 100%, 60%), hsl(36, 100%, 40%)); background-image: linear-gradient(hsl(36, 100%, 60%), hsl(36, 100%, 40%)); border-color: hsl(36, 100%, 40%) hsl(36, 100%, 40%) hsl(36, 100%, 35%); color: #333; text-shadow: 0 1px 1px rgba(255, 255, 255, 0.33); -webkit-font-smoothing: antialiased; }

@@ -120,6 +120,15 @@ $(document).ready(function () {
     if (query.length) $('#play').trigger('click');
     
     $('#reload').click(reload);
+
+    $('#playlist .title').click(function(){
+        $(this).parent().find('div').toggle();
+    })
+
+    $('#settings').click(function(){
+        $('#controls table').slideToggle();
+        $('#container').toggleClass("min");
+    })
     
     function reload () {
         if (!ready.player) return queue.push(reload);
