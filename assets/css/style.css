@@ -1,10 +1,11 @@
 
+html {
+    background: url("../img/broken_noise.png") repeat scroll left top transparent;
+}
 
 html, body {
     margin: 0;
-    padding: 0;
-    background-color: #333;
-    background: url("assets/img/broken_noise.png") repeat scroll left top transparent;
+    padding: 0;    
 }
 
 a {
@@ -16,13 +17,16 @@ h1#logo {
     width: 435px;
     height: 62px;
     text-indent: -999px;
-    background: url("assets/img/logo.png") top left no-repeat transparent;
+    background: url("../img/logo.png") top left no-repeat transparent;
 }
 #header {
     position: relative;
     background-color: #fff;
     z-index: 9999;
-    background: url("assets/img/white_leather.png") repeat scroll 0 0 transparent;
+    background: url("../img/white_leather.png") repeat scroll 0 0 transparent;
+    -webkit-box-shadow: 0px 3px 12px rgba(50, 50, 50, 0.91);
+    -moz-box-shadow:    0px 3px 12px rgba(50, 50, 50, 0.91);
+    box-shadow:         0px 3px 12px rgba(50, 50, 50, 0.91);
 }
 #controls {
     margin-bottom: -170px;
@@ -47,22 +51,22 @@ h1#logo {
     width: 17px;
 }
 #controls .icon-video a {
-    background-image: url(assets/img/icons/icon-music.gif);
+    background-image: url(../img/icons/icon-music.gif);
 }
 #controls .icon-music a {
-    background-image: url(assets/img/icons/icon-video.gif);
+    background-image: url(../img/icons/icon-video.gif);
 }
 #controls .icon-volume a {
     width: 35px;
     height: 10px;
-    background-image: url(assets/img/icons/icon-volume.gif);
+    background-image: url(../img/icons/icon-volume.gif);
     background-position: center center;
 }
 
 #controls .icon-offset a {
     width: 30px;
     height: 10px;
-    background-image: url(assets/img/icons/icon-offset.gif);
+    background-image: url(../img/icons/icon-offset.gif);
     background-position: center center;
 }
 #container {
@@ -87,14 +91,32 @@ h1#logo {
 }
 #playlist {
     z-index: 9999;
-    background-color: #CCCCCC;
-    padding: 15px;
+    padding: 15px 0;
     text-align: left;
+    overflow: auto;
+    margin-bottom: 30px;
 }
 
 #playlist .title {
     margin: -5px 0 10px;
+    display: block;
 }
+
+#playlist div {
+    width: 160px;
+    float: left;
+    text-transform: capitalize;
+}
+#playlist div a {
+    
+    border-radius: 3px 3px 3px 3px;
+    line-height: 30px;
+    padding: 5px;
+}
+#playlist div a.current {
+    background-color: #121212;
+}
+
 #player table input.uri {
     width: 400px;
 }
@@ -127,8 +149,8 @@ h1#logo {
     background-repeat: no-repeat;
     background-position: 0 0;    
 }
-#link {background-image: url("assets/img/icons/icon-lrg-link.gif");}
-#settings {background-image: url("assets/img/icons/icon-lrg-settings.gif");}
+#link {background-image: url("../img/icons/icon-lrg-link.gif");}
+#settings {background-image: url("../img/icons/icon-lrg-settings.gif");}
 
 
 
